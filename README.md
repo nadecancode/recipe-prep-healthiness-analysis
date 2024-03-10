@@ -42,16 +42,20 @@ Reviews
 
 ### Univarable Analysis
 
-#### Distribution of Years
+#### Distribution of Sodium
+<iframe src="fig/fig-sodium.html" width=800 height=600 frameBorder=0></iframe>
 
-#### Distribution of Healthiness Score
+#### Distribution of Saturated Fat
+<iframe src="fig/fig-fat.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Bivariable Analysis
-Healthiness Score vs. Year
 
-Minutes vs. Healthiness Score
+#### Sodium vs. Year
+<iframe src="fig/fig-year-sodium.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Interesting Aggregates
+<iframe src="table/pivoted.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="fig/fig-nutrition-year.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Assessment of Missingness
 
