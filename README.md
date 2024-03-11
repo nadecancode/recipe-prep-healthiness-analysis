@@ -62,6 +62,11 @@ Reviews
 ### NMAR Analysis
 
 ### Missingness Dependency
+1. Rating and Minutes
+<iframe src="fig/fig-rating-minutes.html" width=800 height=600 frameBorder=0></iframe>
+
+2. Rating and Number of Steps
+<iframe src="fig/fig-rating-n_steps.html" width=800 height=600 frameBorder=0></iframe>
 
 
 ## Hypothesis Testing
