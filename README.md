@@ -72,6 +72,15 @@ Reviews
 ## Hypothesis Testing
 
 ### Permutation Test
+*Null Hypothesis*: The rating for recipes with 80 PDV or above sodium and the rating for recipes without come from same population. Any difference is due to random chances.
+*Alternative Hypothesis*: The rating for recipes with 80 PDV or above sodium have different ratings than the ones without.
+*Test Statistics*: `rating`
+*Significance Level*: 0.05
+
+<iframe src="fig/fig-hyp-rating-sodium.html" width=800 height=600 frameBorder=0></iframe>
 
 ### Conclusion
+
+Reject Null Hypothesis, there is a significant difference in ratings between recipes that have high sodium and the recipes that don't.
+
 
