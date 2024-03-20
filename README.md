@@ -83,4 +83,4 @@ Reviews
 
 Reject Null Hypothesis, there is a significant difference in ratings between recipes that have high sodium and the recipes that don't.
 
-
+## Framing a Prediction Problem
