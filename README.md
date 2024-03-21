@@ -107,12 +107,40 @@ classify this missingness as NMAR.
 Here, we can focus on the missingness of rating within our merged dataframe and test the dependence of it on other features.
 
 1. Rating and Minutes
+
+Significance Level: 0.05
+Null Hypothesis: The distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating
+is not missing.  
+Alternative Hypothesis: the distribution of the minutes when rating is missing is different from the distribution of
+the minutes when rating is not missing.
+
+Observed Statistics: The absolute difference between minutes means of the two distributions.
+
+We also draw distribution plots about these two distributions.
+
 <iframe src="fig/fig-rating-minutes.html" width=800 height=600 frameBorder=0></iframe>
 
+Using a permutation test to shuffle the missingness of rating 5000 times to get 5000 results, we get a p-value of about 0.00. 
+Thus, since this p-value falls below our significance value, we reject the null hypothesis. The distribution of the minutes 
+when rating is missing is different from the distribution of the minutes when rating is not missing. 
+The missingness of rating is MAR. 
 
+Now we test for the missingness dependency of Rating on the Number of Steps
 
 2. Rating and Number of Steps
+
+Significance Level: 0.05
+Null Hypothesis: The distribution of the Number of Steps when rating is missing is the same as the distribution of the Number of Steps when rating
+is not missing.  
+Alternative Hypothesis: the distribution of the Number of Steps when rating is missing is different from the distribution of
+the Number of Steps when rating is not missing.
+
 <iframe src="fig/fig-rating-n_steps.html" width=800 height=600 frameBorder=0></iframe>
+
+Using a permutation test to shuffle the missingness of rating 5000 times to get 5000 results, we get a p-value of about 0.127.
+Thus, since this p-value falls below our significance value, we reject the null hypothesis. The distribution of the Number of Steps
+when rating is missing is different from the distribution of the Number of Steps when rating is not missing.
+The missingness of rating is not dependent on Number of Steps.
 
 
 ## Hypothesis Testing
