@@ -188,7 +188,7 @@ Significance Level: We pick a = 0.05 to be our significance level, the classic s
 
 <iframe src="fig/fig-diff-rmse-fair-analysis.html" width=800 height=600 frameBorder=0></iframe>
 
-P-value: As shown by the visualization, our p-value in this case is 0.03.
+P-value: As shown by the visualization, our p-value in this case is 0.02.
 
 Conclusion: We reject the Null Hypothesis, our model indeed performs differently between two groups.
 
