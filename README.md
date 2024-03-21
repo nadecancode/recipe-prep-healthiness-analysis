@@ -186,7 +186,7 @@ Test Statistic: The absolute difference in RMSE between two groups, since the RM
 
 Significance Level: We pick a = 0.05 to be our significance level, the classic setup.
 
-<iframe src="fig/diff-rmse-fair-analysis.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="fig/fig-diff-rmse-fair-analysis.html" width=800 height=600 frameBorder=0></iframe>
 
 P-value: As shown by the visualization, our p-value in this case is 0.03.
 
