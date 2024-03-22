@@ -1,4 +1,4 @@
-# DSC 80 Project 4 - Recipe & Review Dataset Analysis
+# DSC 80 Project 4 - Recipe & Review Dataset Analysis - Rating Correlation Research
 
 ## Project Overview
 This is a data science project centered around how favorable is a recipe given its various attributes including nutrition facts, complexity, and the amount of time it requires to prepare. This project is for DSC80 at UCSD.
@@ -106,7 +106,7 @@ classify this missingness as NMAR.
 ### Missingness Dependency
 Here, we can focus on the missingness of rating within our merged dataframe and test the dependence of it on other features.
 
-1. Rating and Minutes
+#### Rating and Minutes
 
 Significance Level: 0.05
 Null Hypothesis: The distribution of the minutes when rating is missing is the same as the distribution of the minutes when rating
@@ -125,9 +125,9 @@ Thus, since this p-value falls below our significance value, we reject the null 
 when rating is missing is different from the distribution of the minutes when rating is not missing. 
 The missingness of rating is MAR. 
 
-Now we test for the missingness dependency of Rating on the Number of Steps
+Now we test for the missingness dependency of Rating on the Number of Steps 
 
-2. Rating and Number of Steps
+#### Rating and Number of Steps
 
 Significance Level: 0.05
 Null Hypothesis: The distribution of the Number of Steps when rating is missing is the same as the distribution of the Number of Steps when rating

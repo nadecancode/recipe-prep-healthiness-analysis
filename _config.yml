@@ -1,5 +1,5 @@
 title: DSC80 Project 4
-description: blah
+description: We love pulling all nighter just to watch the GridSearchCV & Regression causing maximum iteration exceeded
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
   - jekyll-remote-theme
