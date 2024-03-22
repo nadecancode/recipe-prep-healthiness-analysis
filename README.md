@@ -197,7 +197,13 @@ After doing final touches on the features, we have decided to use `RandomForestR
 
 To improve our hyperparameter selections, we have determined that it is better to utilize cross-validation in the model since it samples various segments in the training set and use it to improve the hyperparameter choices compared to only using one single randomized segment in the training set. Fortunately, `GridSearchCV` by default comes with a 5-fold cross validation which does not require us to manually write out the validation steps. It also allows us to iterate through possible hyperparameter combinations within a single constructor. What a good tool!
 
-After running a `GridSearchCV` on the possible hyperparameters, `n_estimators` which is the number of Decision Trees we are employing in this forest and `max_depth` which is the maximum depth of each decision tree we are allowed to have, best possible combination is `max_depth` = 10 and `n_estimators` = 100.
+We plan to tune two hyperparameters in our `RandomForestRegressor` - `n_estimators` and `max_depth`. We will explain why below:
+1. `n_estimators` - This parameter determines the number of decision trees in the forest. Increasing the number of trees generally improves the performance of the model up to a certain point. More trees reduce the variance of the model, making it less prone to overfitting. However, adding too many trees can increase the computational cost without providing significant improvements in performance. Therefore, tuning `n_estimators` involves finding the right balance between model performance and computational efficiency.
+2. `max_depth` - This parameter controls the maximum depth of each decision tree in the forest. Deeper trees can capture more complex relationships in the data, potentially leading to better performance on the training set. However, deeper trees are also more likely to overfit the training data, resulting in poor generalization to unseen data. By limiting the depth of the trees, you can prevent overfitting and improve the model's ability to generalize to new data. Tuning `max_depth` involves finding the optimal depth that balances model complexity and generalization performance.
+
+Therefore, we believe tuning these two hyperparameters will result in a proper balance between fitting time and accuracy, since tuning hyperparameters is a time intensive work as the hyperparamter combinations can scale up exponentially.
+
+After running a `GridSearchCV` on the possible hyperparameter combinations among the ones we have selected above, best possible combination is `max_depth` = 10 and `n_estimators` = 100.
 
 Compared to the Baseline model, the RMSE for this model has improved from 0.71 to 0.66, which is a considerable improvement since again, the rating is only out of 5. Our final model's prediction is getting closer to the actual `rating` numbers!
 
@@ -210,17 +216,17 @@ Hence, for our "Group X vs Group Y", we've chosen the Group X to be `is_first_ha
 Our evaluation metric is simple - as stated earlier, RMSE is a suitable candidate for the job!
 
 Null Hypothesis: Our model is fair, its RMSE for recipes in the first half of covered year range and second half of covered year range are roughly the same. Any difference is due to randomness and chances.
-Alternative Hypothesis: Out model is NOT fair, its RMSE for recipes in the first half of covered year range and second half of covered year range are not the same. The model's performance on prediction in one group is significantly different from the other.
+Alternative Hypothesis: Out model is NOT fair, its RMSE for recipes in the first half of covered year range and second half of covered year range are not the same. The model's performance on prediction in first half's dataset is worse than the second half's dataset.
 
-Test Statistic: The absolute difference in RMSE between two groups, since the RMSE is a numerical value the absolute difference in RMSE is an ideal candidate
+Test Statistic: The difference in RMSE between two groups, since the RMSE is a numerical value the absolute difference in RMSE is an ideal candidate
 
 Significance Level: We pick a = 0.05 to be our significance level, the classic setup.
 
 <iframe src="fig/fig-diff-rmse-fair-analysis.html" width=800 height=600 frameBorder=0></iframe>
 
-P-value: As shown by the visualization, our p-value in this case is 0.02.
+P-value: As shown by the visualization, our p-value in this case is 0.62.
 
-Conclusion: We reject the Null Hypothesis, our model indeed performs differently between two groups.
+Conclusion: We fail to reject the Null Hypothesis, our model performs fair among the dataset that are from first half of the covered year and second half of the covered years! Poggers :pog:
 
 
 
